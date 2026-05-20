@@ -527,7 +527,14 @@ p {
 
 @media (max-width: 1000px) {
     .timeline-anim {
-        display: none; /* Hide on smaller screens to prevent overlap */
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: scale(0.65);
+        margin: 0 auto 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -997,6 +1004,7 @@ p {
 }
 
 /* Responsive */
+
 @media (max-width: 768px) {
     .hero {
         align-items: center;
@@ -1011,9 +1019,81 @@ p {
         grid-template-columns: 1fr;
     }
 
+    /* Navigation & Socials */
+    .nav-social-links,
+    .nav-links li:last-child {
+        display: none !important;
+    }
     .nav-links {
-        display: none; /* In a real app, implement hamburger menu */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+        width: 100%;
+        padding: 0;
+    }
+    .nav-links a:not(.btn-primary) {
+        font-size: 0.95rem;
+        padding: 5px;
+    }
+    
+    .role-title {
+        justify-content: center;
+    }
+    
+    .role-text-slider span {
+        justify-content: center;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
     }
 
+    /* Timeline */
+    .timeline::after {
+        display: none;
+    }
+    .timeline-dot {
+        display: none;
+    }
+    .timeline-item {
+        padding: 10px 0 30px 0;
+    }
+    .timeline-content {
+        padding: 20px 15px;
+    }
+    .company-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .timeline-content h3 {
+        font-size: 1.25rem;
+    }
+    .timeline-content .role {
+        font-size: 1rem;
+    }
+    .timeline-content ul {
+        padding-left: 15px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
 
+    /* Education stats */
+    .edu-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
 }
